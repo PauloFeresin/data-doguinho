@@ -10,7 +10,7 @@ class ApiRequestService {
             const response = await axios({
                 method,
                 url,
-                data: payload,
+                // data: payload,
                 timeout: 5000
             });
             const time  = Date.now() - start;
@@ -20,7 +20,8 @@ class ApiRequestService {
                 method,
                 status: response.status,
                 responseTime: time,
-                data: response.data,
+                timestamp: new Date(),
+                // data: response.data,
             };
         } catch (error) {
             return {
